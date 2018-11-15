@@ -440,3 +440,133 @@ reboot
 
 ```
 
+<h3>Depois de reiniciar execute estes comandos para encontrar o Windows</h3>
+
+```
+
+pacman -S os-prober --noconfirm
+
+```
+E depois 
+
+```
+
+grub-mkconfig -o /boot/grub/grub.cfg
+
+```
+```
+
+reboot
+
+```
+Perceba que ao reiniciar aparece a opção de boot do Windows
+
+<h2>Colocando as pastas de usuários</h2>
+
+```
+
+pacman -S xdg-user-dirs
+
+```
+```
+
+xdg-user-dirs-update
+
+```
+<h2>Install Graphics Driver</h2>
+Instale o que for referente ao seu
+
+```
+
+pacman -S virtualbox-guest-utils  - para o virtualbox
+
+```
+```
+
+pacman -S xf86-video-amdgpu  - para placas amd-radeon
+
+```
+```
+
+pacman -S xf86-video-intel - para placas da Intel)
+
+```
+```
+
+pacman -S xf86-video-nouveau ( Placa Video Nvidia) #OpenSource
+
+```
+
+
+
+<h2>Install Display Server (Xorg)</h2>
+
+```
+
+pacman -S xorg xterm  
+
+```
+
+Depois de ser feita a instalação xorg com sucesso, verifique se está funcionando corretamente executando o comando seguite:
+
+```
+
+startx
+
+```
+
+Se não retornou nenhum erro, então está  tudo ok!
+<h2>Instalando o i3WM </h2>
+
+```
+
+sudo pacman -S i3 i3blocks
+
+```
+<h2>Instalando o Login Manager</h2>
+
+```
+
+sudo pacman -S slim
+
+```
+
+<h3>Para fazer com que o i3 suba no xorg startup, abra/crie o arquivo ~/.xinitrc e adicione as seguintes linhas:</h3>
+
+Abra o Arquivo
+
+```
+
+nano ~/.xinitrc
+
+```
+
+E adicione as linhas
+
+```
+
+#! /bin/bash
+exec i3
+
+```
+
+
+<h3>Para o i3 subir automaticamente depois do login, abra o aquivo seguinte e adicione essas linhas:</h3>
+
+Abra o Arquivo
+
+```
+
+nano ~/.bash_profile
+
+```
+
+E adicione as linhas
+
+```
+
+if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
+startx
+fi
+
+```
