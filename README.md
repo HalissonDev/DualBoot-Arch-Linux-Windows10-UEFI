@@ -181,7 +181,7 @@ Criar o diretório /home :
 mkdir -p /mnt/home
 
 ```
-Montar partición /home :
+Montar a partição /home :
 
 ```
 
