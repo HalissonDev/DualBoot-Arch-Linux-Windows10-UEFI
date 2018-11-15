@@ -141,7 +141,7 @@ Formatar a partição SWAP :
 
 ```
 
-mkswap /dev/sda5
+mkswap -L "Linux Swap" /dev/sda5
 
 ```
 Ativar a partição SWAP :
@@ -155,14 +155,14 @@ Formatar a partição (/root) :
 
 ```
 
-mkfs.ext4 /dev/sda6
+mkfs.ext4 -L "Root" /dev/sda6
 
 ```
 Formatar a partição (/home):
 
 ```
 
-mkfs.ext4 /dev/sda7
+mkfs.ext4 -L "Home" /dev/sda7
 
 ```
 
@@ -193,7 +193,7 @@ Agora monte a partição: (/boot)   (UEFI)
 
 ```
 
-mkdir -p /mnt/boot/efi && mount /dev/sdaX /mnt/boot/efi
+mkdir -p /mnt/boot/efi && mount /dev/sda2 /mnt/boot/efi
 
 ```
 
