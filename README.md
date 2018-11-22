@@ -497,8 +497,15 @@ pacman -S xf86-video-nouveau ( Placa Video Nvidia) #OpenSource
 
 ```
 
+<h2>ADVANCED LINUX SOUND ARCHITECTURE (ALSA)<h2>
+Agora, vamos instalar os aplicativos para placa de som:
+
+```
+
+# pacman -S alsa-utils alsa-lib pulseaudio pulseaudio-alsa pavucontrol
 
 
+```
 <h2>Install Display Server (Xorg)</h2>
 
 ```
